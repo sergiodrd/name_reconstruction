@@ -1,15 +1,15 @@
 from transformers import pipeline
 import sys
 
-def prompt_all(prompt: str, llms: list[str]) -> list:
+def prompt_all(prompt: str, llms: list[str], token_limit: int) -> list:
     responses = []
     for llm in llms:
-        pipe = pipeline("text-generation", model=llm)
+        pipe = pipeline("text-generation", model=llm, max_new_tokens=token_limit)
         responses.append(pipe(prompt))
     return responses
 
-def prompt_one(prompt: str, llm: str):
-    pipe = pipeline("text-generation", model=llm)
+def prompt_one(prompt: str, llm: str, token_limit: int):
+    pipe = pipeline("text-generation", model=llm, max_new_tokens=token_limit)
     return pipe(prompt)
 
 def main():
@@ -18,9 +18,13 @@ def main():
         exit(1)
 
     f = open(sys.argv[1], 'r')
-    contents = f.read().split()
+    llms = f.read().split()
     f.close()
 
     # responses = prompt_all("hello world", contents)
-    responses = prompt_one("hello world", contents[0])
-    print(responses)
+    responses = prompt_all("hello world", llms, 200)
+    f = open("out.txt", 'w')
+    for i in range(len(llms)):
+        f.write(f"LLM {i+1}: {llms[i]}\n")
+        f.write(f"Response: {responses[i]}")
+    f.close()
