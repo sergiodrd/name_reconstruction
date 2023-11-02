@@ -1,16 +1,27 @@
 from transformers import pipeline
 import sys
 
-def prompt_all(prompt: str, llms: list[str], token_limit: int) -> list:
+def prompt_all(prompt: str, llms: list[str], token_limit: int, file, f = id) -> list:
     responses = []
     for llm in llms:
-        pipe = pipeline("text-generation", model=llm, max_new_tokens=token_limit)
-        responses.append(pipe(prompt))
+        try:
+            pipe = pipeline("text-generation", model=llm, max_new_tokens=token_limit)
+            res = pipe(prompt)
+            responses.append(res)
+            f(res, file)
+        except Exception:
+            pass
     return responses
 
 def prompt_one(prompt: str, llm: str, token_limit: int):
-    pipe = pipeline("text-generation", model=llm, max_new_tokens=token_limit)
-    return pipe(prompt)
+    try:
+        pipe = pipeline("text-generation", model=llm, max_new_tokens=token_limit)
+        return pipe(prompt)
+    except Exception:
+        pass
+
+def output_response(r, file):
+    file.write(r)
 
 def main():
     if len(sys.argv) != 2:
@@ -21,10 +32,6 @@ def main():
     llms = f.read().split()
     f.close()
 
-    # responses = prompt_all("hello world", contents)
-    responses = prompt_all("hello world", llms, 200)
-    f = open("out.txt", 'w')
-    for i in range(len(llms)):
-        f.write(f"LLM {i+1}: {llms[i]}\n")
-        f.write(f"Response: {responses[i]}")
+    f = open("out.txt", 'a')
+    _ = prompt_all("hello world", llms, 200, f, output_response)
     f.close()
