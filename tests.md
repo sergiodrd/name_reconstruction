@@ -1,4 +1,4 @@
-# prompt:
+# Prompt
 
 Can you help me guess some information for the following decompiled C function from a binary program? The following is the decompiled C function:
 int sub_4BECE3 (uint32_t a1){ uint8_t result; if (a1 - 65 > 25) result = a1; else result = a1 + 32; return result; }
@@ -12,7 +12,7 @@ result -> shifted_char
 sub_4BECE3 -> char_shift_if_needed
 ```
 
-## errors/warnings
+## Errors/Warnings
 
 ```
 Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
@@ -39,7 +39,7 @@ a1 -> input result -> output sub_4BECE3 -> ? I'm not sure what you're asking. Ar
 a1 -> input result -> output sub_4BECE3 -> ? I'm not sure what you're asking. Are you asking
 ```
 
-## errors/warnings
+## Errors/Warnings
 
 ```
 Setting `pad_token_id` to `eos_token_id`:2 for open-end generation.
@@ -88,7 +88,7 @@ int main(int argc, char **argv) {
     char *comment =
 ```
 
-## errors/warnings
+## Errors/Warnings
 
 ```
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
@@ -126,7 +126,7 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
 
 (No output)
 
-## errors/warnings
+## Errors/Warnings
 
 ```
 Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
