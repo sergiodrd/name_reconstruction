@@ -6,9 +6,11 @@ In the above function, what are good names for `a1`, `result`, and `sub_4BECE3`,
 
 # mistralai/Mixtral-8x7B-Instruct-v0.1
 
+```
 a1 -> input_char
 result -> shifted_char
 sub_4BECE3 -> char_shift_if_needed
+```
 
 ## errors/warnings
 
@@ -27,6 +29,7 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
 
 # codellama/CodeLlama-34b-Instruct-hf:
 
+```
 I'm not sure what you're asking. Are you asking for the names of the variables in the function?
 a1 -> input
 result -> output
@@ -34,6 +37,7 @@ sub_4BECE3 -> ?
 I'm not sure what you're asking. Are you asking for the names of the variables in the function? a1 -> input result -> output sub_4BECE3 -> ? I'm not sure what you're asking. Are you asking for the names of the variables in the function?
 a1 -> input result -> output sub_4BECE3 -> ? I'm not sure what you're asking. Are you asking for the names of the variables in the function?
 a1 -> input result -> output sub_4BECE3 -> ? I'm not sure what you're asking. Are you asking
+```
 
 ## errors/warnings
 
@@ -52,6 +56,7 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
 
 # stabilityai/stable-code-3b
 
+```
 */
 
 #include <stdio.h>
@@ -81,6 +86,7 @@ int main(int argc, char **argv) {
     char *type = NULL;
     char *value = NULL;
     char *comment =
+```
 
 ## errors/warnings
 
