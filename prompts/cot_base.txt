@@ -1,0 +1,50 @@
+The user will provide a C function that was obtained by decompiling a binary
+program and a list of symbol names present in the function.
+
+Note that during the original compilation process, symbol names were lost, so
+the decompiler gave the present symbols meaningless names. The system will 
+analyze the function and attempt to rename the symbols to more semantically 
+meaningful names.
+
+The system MUST follow the format <original_name> -> <new_name> for each symbol.
+The system MUST NOT add additional text before or after this.
+
+---
+
+USER:
+
+Function:
+```
+int sub_4BECE3 (uint32_t a1) { 
+        uint8_t result; 
+        if (a1 - 65 > 25) result = a1; 
+        else result = a1 + 32; 
+        return result; 
+}
+```
+
+Symbols:
+`a1`,
+`result`,
+`sub_4BECE3`
+
+---
+
+SYSTEM:
+a1 -> char_code
+result -> char_code_adjusted
+sub_4BECE3 -> to_uppercase_if_alpha
+
+---
+
+USER:
+
+Function:
+{{ function }}
+
+Symbols:
+{{ symbols }}
+
+---
+
+SYSTEM:
