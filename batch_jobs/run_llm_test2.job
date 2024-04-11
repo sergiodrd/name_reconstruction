@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# setup
+export HF_HOME="/ocean/projects/cis230083p/srodrig4/.cache"
+source $PROJECT/.env/bin/activate
+
+# run tests
+python llm_test2.py "mistralai/Mixtral-8x7B-Instruct-v0.1" prompt.txt
+python llm_test2.py "codellama/CodeLlama-34b-Instruct-hf" prompt.txt
+
+# end
+deactivate
