@@ -1,2 +1,5 @@
 .envrc
-shell.nix
+.direnv/
+*/__pycache__/
+*.nix
+lmpa/
