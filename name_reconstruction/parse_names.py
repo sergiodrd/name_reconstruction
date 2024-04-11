@@ -13,18 +13,18 @@ class Visitor(c_ast.NodeVisitor):
         print(f"Function name: {fn_name}\nFunction arguments:\n\t{fn_args}\nVariables:\n\t{variables}")
 
 
-def main():
-    if len(sys.argv) != 2:
-        print("Please provide a c file path.")
-        exit(1)
+# def main():
+if len(sys.argv) != 2:
+    print("Please provide a c file path.")
+    exit(1)
 
-    ast = parse_file(sys.argv[1], use_cpp=True)
+ast = parse_file(sys.argv[1], use_cpp=True)
 
-    # print("\n=== FULL AST ===\n")
-    #
-    # ast.show()
-    #
-    # print("\n=== FUNC DEFS ===\n")
+print("\n=== FULL AST ===\n")
 
-    v = Visitor()
-    v.visit(ast)
+ast.show()
+
+print("\n=== FUNC DEFS ===\n")
+
+v = Visitor()
+v.visit(ast)

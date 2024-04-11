@@ -27,7 +27,7 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
 2024-02-07 12:55:32.847317: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
 ```
 
-# codellama/CodeLlama-34b-Instruct-hf:
+# codellama/CodeLlama-34b-Instruct-hf
 
 ```
 I'm not sure what you're asking. Are you asking for the names of the variables in the function?

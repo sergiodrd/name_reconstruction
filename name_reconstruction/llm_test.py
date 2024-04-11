@@ -1,4 +1,5 @@
 from transformers import pipeline
+import logging
 import sys
 
 def prompt_all(prompt: str, llms: list[str], token_limit: int, file, f = id) -> list:
