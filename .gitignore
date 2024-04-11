@@ -1,6 +1,6 @@
 .envrc
 .direnv/
-*/__pycache__/
+**/__pycache__/
 *.nix
 lmpa/
 sources/builds
