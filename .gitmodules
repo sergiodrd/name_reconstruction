@@ -1,0 +1,18 @@
+[submodule "sources/diffutils"]
+	path = sources/diffutils
+	url = https://git.savannah.gnu.org/git/diffutils.git
+[submodule "sources/findutils"]
+	path = sources/findutils
+	url = https://git.savannah.gnu.org/git/findutils.git
+[submodule "sources/coreutils"]
+	path = sources/coreutils
+	url = https://git.savannah.gnu.org/git/coreutils.git
+[submodule "sources/ImageMagick"]
+	path = sources/ImageMagick
+	url = https://github.com/ImageMagick/ImageMagick.git
+[submodule "sources/sqlite"]
+	path = sources/sqlite
+	url = https://github.com/sqlite/sqlite.git
+[submodule "sources/binutils"]
+	path = sources/binutils
+	url = https://sourceware.org/git/binutils-gdb.git
