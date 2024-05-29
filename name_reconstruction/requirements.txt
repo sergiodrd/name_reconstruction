@@ -1,0 +1,4 @@
+JPype1==1.5.0
+numpy==1.26.4
+packaging==24.0
+pyhidra==1.0.2
